@@ -36,32 +36,81 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGe-BT-ZDJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGe-BT-ZDJ" userLabel="letsMathBtn">
                                 <rect key="frame" x="186" y="346" width="229" height="219"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="219" id="35k-ih-hiJ"/>
                                     <constraint firstAttribute="width" constant="229" id="bfR-EQ-Y6k"/>
                                 </constraints>
                                 <state key="normal" image="letsMathBtn"/>
+                                <connections>
+                                    <action selector="onLetsMathPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PXq-o6-7hv"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-E2-Uql">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What multiple to add by?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-E2-Uql" userLabel="whatMultipleTxt">
                                 <rect key="frame" x="163" y="288" width="275" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sPW-m3-chA"/>
+                                    <constraint firstAttribute="width" constant="275" id="yoG-A6-Koy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press ADD to Add!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QR6-qL-5AY" userLabel="mathLbl">
+                                <rect key="frame" x="138" y="116" width="324" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="324" id="DnD-7P-eE4"/>
+                                    <constraint firstAttribute="height" constant="48" id="aVd-l8-0eO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwT-Bd-kRl" userLabel="addBtn">
+                                <rect key="frame" x="163" y="375" width="276" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="306" id="0ZD-T7-4Py"/>
+                                    <constraint firstAttribute="height" constant="50" id="lkp-Z8-Ebm"/>
+                                    <constraint firstAttribute="height" constant="56" id="pN7-lj-727"/>
+                                    <constraint firstAttribute="width" constant="276" id="yK2-Nt-4Yz"/>
+                                </constraints>
+                                <state key="normal" image="addBtn"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0ZD-T7-4Py"/>
+                                        <exclude reference="pN7-lj-727"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onAddPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ywo-s6-pQY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="QR6-qL-5AY" firstAttribute="top" secondItem="Hlh-24-NHf" secondAttribute="bottom" constant="8" id="136-St-ABr"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YGe-BT-ZDJ" secondAttribute="bottom" constant="35" id="38j-qK-2oI"/>
                             <constraint firstItem="qov-yn-czi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-21" id="9u8-l9-zaP"/>
                             <constraint firstItem="Hlh-24-NHf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GyD-EV-dDl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qov-yn-czi" secondAttribute="trailing" constant="-20" id="L7R-EY-QgU"/>
+                            <constraint firstItem="YGe-BT-ZDJ" firstAttribute="top" secondItem="WEi-E2-Uql" secondAttribute="bottom" constant="28" id="LZm-dq-Uy5"/>
                             <constraint firstItem="qov-yn-czi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="QU0-CD-Ig8"/>
                             <constraint firstAttribute="bottomMargin" secondItem="qov-yn-czi" secondAttribute="bottom" constant="-27" id="QdT-ZO-HjU"/>
                             <constraint firstItem="Hlh-24-NHf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="RWc-R7-VzJ"/>
                             <constraint firstItem="YGe-BT-ZDJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XQc-kQ-fpW"/>
+                            <constraint firstItem="QR6-qL-5AY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YsO-Aa-dfc"/>
+                            <constraint firstItem="WEi-E2-Uql" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dBt-ly-mes"/>
+                            <constraint firstItem="ZwT-Bd-kRl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nbX-vy-bCj"/>
+                            <constraint firstItem="ZwT-Bd-kRl" firstAttribute="top" secondItem="WEi-E2-Uql" secondAttribute="bottom" constant="54" id="yfQ-Li-pej"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addBtn" destination="ZwT-Bd-kRl" id="tJ5-TN-0rC"/>
+                        <outlet property="letsMathBtn" destination="YGe-BT-ZDJ" id="mOR-Yd-9l5"/>
+                        <outlet property="logoImg" destination="Hlh-24-NHf" id="kcA-dr-Ufa"/>
+                        <outlet property="mathLbl" destination="QR6-qL-5AY" id="NHK-4b-3Ke"/>
+                        <outlet property="whatMultipleTxt" destination="WEi-E2-Uql" id="ufM-FP-JRL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,8 +118,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addBtn" width="355" height="66"/>
         <image name="chalkboardBG" width="800" height="800"/>
-        <image name="letsMathBtn" width="229" height="219"/>
+        <image name="letsMathBtn" width="539" height="520"/>
         <image name="logo" width="533" height="124"/>
     </resources>
 </document>
